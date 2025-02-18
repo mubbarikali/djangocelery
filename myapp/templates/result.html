@@ -1,0 +1,21 @@
+<!-- myapp/templates/myapp/result.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Result{% endblock %}
+
+{% block content %}
+    <h1>Result</h1>
+    <hr>
+    {% if result %}
+
+    <h3>Task ID_1: {{result.id}}</h3>
+    <h3>Task ID_2: {{result.task_id}}</h3>
+    <h3>Task State: {{result.state}}</h3>
+    <h3>Task Status: {{result.status}}</h3>
+    <h3>Task Result: {{result.result}}</h3>
+
+    {% endif %}
+
+
+{% endblock %}

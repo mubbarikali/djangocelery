@@ -1,0 +1,15 @@
+<!-- myapp/templates/myapp/home.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Home</h1>
+    <hr>
+    {% if result.id %}
+    <p>Task ID: {{ result.id }}</p>
+    <a href="{% url 'check_result' result.id %}">Check Result</a>
+    {% endif %}
+
+{% endblock %}
