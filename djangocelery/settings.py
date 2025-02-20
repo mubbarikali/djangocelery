@@ -1,4 +1,5 @@
 from pathlib import Path
+import django_celery_beat
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -27,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'myapp',
     'django_celery_results',
+    'django_celery_beat',
     
 ]
 
@@ -96,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Karachi'
 
 USE_I18N = True
 
@@ -120,8 +122,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CELERY_BROKER_URL = "redis://127.0.0.1:6379/0"
 # CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'  # Use Redis as the result backend
 CELERY_RESULT_BACKEND = 'django-db'  # OR use django-db as backend
-CELERY_TIMEZONE = "Asia/Kolkata"
+CELERY_TIMEZONE = "Asia/Karachi"
 CELERY_RESULT_EXTENDED = True
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 
 # Scheduling Tasks
@@ -134,4 +137,4 @@ CELERY_RESULT_EXTENDED = True
 #     }
 # }
 
-## Method 2
+

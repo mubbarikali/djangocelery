@@ -24,7 +24,7 @@ def debug_task(self):
 
 
 
-
+## Method 2
 # # Without timedelta
 # app.conf.beat_schedule = {
 #     'session_cleanup': {
