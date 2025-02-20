@@ -123,3 +123,15 @@ CELERY_RESULT_BACKEND = 'django-db'  # OR use django-db as backend
 CELERY_TIMEZONE = "Asia/Kolkata"
 CELERY_RESULT_EXTENDED = True
 
+
+# Scheduling Tasks
+## Method 1
+# CELERY_BEAT_SCHEDULE = {
+#     'session_cleanup': {
+#         'task': 'myapp.tasks.clear_session_cache',
+#         'schedule': 10,
+#         'args': ('777', )
+#     }
+# }
+
+## Method 2
